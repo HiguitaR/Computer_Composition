@@ -46,11 +46,19 @@ public class Computer {
 
     public void displayComputer(){
         if (this.computersCount != 0){
-            for (int i = 0; i < ; i++) {
+            for (int i = 0; i < computersCount; i++) {
                 System.out.println(toString() + this.cpus[i] + this.rams[i] + this.hard_drives[i]);
             }
         }else{
             System.out.println("Nothing to see!");
+        }
+    }
+
+    public void starterComputer(){
+        if (computersCount != 0){
+            System.out.println("Turning on the computer! 💻");
+        }else{
+            System.out.println("You can't turn on the computer without assembling!❌");
         }
     }
 

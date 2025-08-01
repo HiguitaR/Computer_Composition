@@ -1,14 +1,12 @@
-public class Ram {
-    private final int capacityGB;
+public record Ram(int capacityGB) {
 
-    public Ram(int capacityGB) {
-        this.capacityGB = capacityGB;
+    public void starterRam() {
+        System.out.println("Turning on Ram!✅");
     }
 
-    public int getCapacityGB() {
-        return capacityGB;
-    }
 
     @Override
-    public String toString() {return String.format("RAM capacity: %d GB", getCapacityGB());}
+    public String toString() {
+        return String.format("RAM capacity: %d GB", capacityGB());
+    }
 }
