@@ -1,0 +1,5 @@
+.class/
+.dir/
+*.iml/
+*.class/
+*.ignore/
