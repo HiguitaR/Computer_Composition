@@ -1,13 +1,20 @@
-import java.util.Arrays;
+
 
 public class Computer {
+    /**
+     * Class Computer that instance an object to create a some computers
+     */
     private final String model;
     private int computersCount;
     private final Cpu[] cpus;
     private final Ram[] rams;
     private final Hard_Drive[] hard_drives;
 
-
+    /**
+     * Constructor of the class Computer
+     * @param model computer model
+     * @param computer_Numbers numbers of computers to create
+     */
     public Computer(String model, int computer_Numbers) {
         this.model = model;
         this.cpus = new Cpu[computer_Numbers];
@@ -18,6 +25,14 @@ public class Computer {
 
     public String getModel() {return model;}
 
+
+    /**
+     * Add components Method to agree elements at the class
+     * @param speed hard drive data processing
+     * @param capacityGB capacity data in memory ram
+     * @param type  what type is hard drive SSD or HDD
+     * @param capacityHD capacity data in hard drive
+     */
     public void addComponents(double speed, int capacityGB, String type,
                               int capacityHD){
         if (this.computersCount < this.cpus.length){
@@ -39,6 +54,9 @@ public class Computer {
         this.computersCount ++;
     }
 
+    /**
+     * Display Method to show all info about computer
+     */
     public void displayComputer(){
         if (this.computersCount != 0){
             for (int i = 0; i < computersCount; i++) {
@@ -49,6 +67,9 @@ public class Computer {
         }
     }
 
+    /**
+     * Start Method to run test all elements of computer
+     */
     public void starterComputer(){
         if (computersCount != 0){
             System.out.println("Turning on the computer! 💻");

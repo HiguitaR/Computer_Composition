@@ -9,6 +9,5 @@ public class Main {
         Lenovo.displayComputer();
         Lenovo.addComponents(3.5, 2000, "SSD", 4000);
         Lenovo.starterComputer();
-
     }
 }
