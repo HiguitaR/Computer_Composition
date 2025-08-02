@@ -23,23 +23,18 @@ public class Computer {
         if (this.computersCount < this.cpus.length){
             Cpu newCpu = new Cpu(speed);
             this.cpus[computersCount] = newCpu;
-            System.out.println("Add Cpu Successful!✅");
-        }else{
-            System.out.println("The Computer already has a Cpu! ❌");
-        }
-        if (this.computersCount < this.rams.length){
+            System.out.println("Add Cpu Successful!✅ " +
+                    this.cpus[computersCount].speed() + "Hz");
             Ram newRam = new Ram(capacityGB);
             this.rams[computersCount] = newRam;
-            System.out.println("Add Ram Successful!✅");
-        }else{
-            System.out.println("The Computer already has a Ram! ❌");
-        }
-        if (this.computersCount < this.hard_drives.length){
+            System.out.println("Add Ram Successful!✅ " +
+                    this.rams[computersCount].capacityGB() + "GB");
             Hard_Drive newHardDrive = new Hard_Drive(type, capacityHD);
             this.hard_drives[computersCount] = newHardDrive;
-            System.out.println("Add Hard Drive Successful!✅");
+            System.out.println("Add Hard Drive Successful!✅ " +
+                    this.hard_drives[computersCount].capacityGB() + "GB");
         }else{
-            System.out.println("The Computer already has a Hard Drive! ❌");
+            System.out.println("The Computer already has complete! ❌");
         }
         this.computersCount ++;
     }
@@ -57,11 +52,15 @@ public class Computer {
     public void starterComputer(){
         if (computersCount != 0){
             System.out.println("Turning on the computer! 💻");
+            Cpu.starterCpu();
+            Ram.starterRam();
+            Hard_Drive.starterHD();
+            System.out.println("The computer is ready to use!");
         }else{
             System.out.println("You can't turn on the computer without assembling!❌");
         }
     }
 
     @Override
-    public String toString() {return String.format("Computer model: %s", getModel());}
+    public String toString() {return String.format(" Computer model: %s, ", getModel());}
 }
